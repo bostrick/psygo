@@ -1,0 +1,40 @@
+<html metal:define-macro="main">
+
+<head>
+    <title metal:define-slot="title">Psygo</title>
+
+    <tal:a metal:define-slot="stylesheets">
+
+        <link rel="stylesheet"  type="text/css" media="screen" charset="utf-8"
+            href="${request.static_url('psygo:static/DataTables/css/jquery.dataTables.css')}"/>
+
+        <tal:a metal:define-slot="extra-stylesheets"/>
+
+    </tal:a>
+
+    <tal:a metal:define-slot="head-scripts">
+
+        <script src="${request.static_url('psygo:static/js/jquery.js')}">
+        </script>
+
+        <script src="${request.static_url('psygo:static/DataTables/js/jquery.dataTables.js')}">
+        </script>
+        
+        <script src="${request.static_url('psygo:static/js/base.js')}">
+        </script>
+        
+        <tal:a metal:define-slot="extra-head-scripts"/>
+
+    </tal:a>
+    
+</head>
+
+<body>
+
+<div metal:define-slot="content">
+    Hello world
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<html metal:use-macro="view.main.macros['main']">
+
+<div metal:fill-slot="content">
+
+    Table ${table}
+
+    <pre tal:content="view.psycopg_info"/>
+
+    <form class="dataTable" action="/table_j/${table}">
+        <table class="dataTable">
+        </table>
+    </form>
+
+
+<script>
+    $(document).ready(function() {
+        var aoMgrs = $("form.dataTable").each(function(idx, form) {
+            return new TableManager(form);
+        });
+    });
+</script>
+
+</div>
+
+</html>
+
